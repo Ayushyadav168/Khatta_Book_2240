@@ -9,10 +9,9 @@ const mongooseconnection = require("./config/mongoose")
 const mongoURI = 'mongodb://127.0.0.1:27017/';
 const userModel = require("./models/userModel")
 const hisaabModel = require("./models/hisaabModel")
+require('dotenv').config()
 
 
-
-app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.set("view engine", "ejs")
@@ -286,7 +285,7 @@ app.get("/logout", (req, res) => {
         res.status(500).send(err.message)
     }
 })
-
-app.listen(3000, () => {
-    log("Listening at port 3000")
+const PORT = process.env.PORT || 3000;
+app.listen(PORT ,()=>{
+    console.log(`app is runing on ${PORT}`)
 })
