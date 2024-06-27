@@ -285,7 +285,7 @@ app.get("/logout", (req, res) => {
         res.status(500).send(err.message)
     }
 })
-const PORT = process.env.PORT || 3000;
-app.listen(PORT ,()=>{
+const Port = process.env.PORT || 3000;
+app.listen(Port ,()=>{
     console.log(`app is runing on ${PORT}`)
 })
