@@ -1,6 +1,8 @@
 const mongoose =require('mongoose')
 const log = require('debug')("development:mongoose")
-mongoose.connect("mongodb://127.0.0.1:27017/khatabook");
+
+const mongoURI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/khatabook';
+mongoose.connect(mongoURI);
 
 const db = mongoose.connection;
 
