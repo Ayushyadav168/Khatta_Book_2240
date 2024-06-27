@@ -6,10 +6,10 @@ const expressSession = require('express-session')
 const flash = require("connect-flash")
 const cookieParser = require("cookie-parser");
 const mongooseconnection = require("./config/mongoose")
-const mongoURI = 'mongodb://127.0.0.1:27017/';
 const userModel = require("./models/userModel")
 const hisaabModel = require("./models/hisaabModel")
 require('dotenv').config()
+
 
 
 app.use(express.json())
