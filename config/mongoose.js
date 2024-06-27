@@ -9,9 +9,9 @@ async function connectDB() {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-        log("Connected to Database successfully");
+        console.log("Connected to Database successfully");
     } catch (err) {
-        log("Error connecting to the database:", err);
+        console.log("Error connecting to the database:", err);
         process.exit(1); // Exit the process with an error code
     }
 }
@@ -21,7 +21,7 @@ connectDB();
 const db = mongoose.connection;
 
 db.on("error", (err) => {
-    log(err);
+    console.log(err);
 });
 
 module.exports = db;
