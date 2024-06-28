@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const log = require('debug')("development:mongoose");
 
-const mongoURI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/khatabook';
+const mongoURI = process.env.MONGODB_URI 
 
 async function connectDB() {
     try {
-        await mongoose.connect(mongoURI, {
+        await mongoose.connection(mongoURI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
